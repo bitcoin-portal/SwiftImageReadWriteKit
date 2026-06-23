@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "SwiftImageReadWrite",
+	name: "SwiftImageReadWriteKit",
 	platforms: [
 		.macOS(.v10_11),
 		.iOS(.v11),
@@ -12,21 +12,22 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "SwiftImageReadWrite",
-			targets: ["SwiftImageReadWrite"]),
+			name: "SwiftImageReadWriteKit",
+			targets: ["SwiftImageReadWriteKit"]),
 	],
 	dependencies: [
 	],
 	targets: [
 		.target(
-			name: "SwiftImageReadWrite",
+			name: "SwiftImageReadWriteKit",
+			path: "Sources/SwiftImageReadWriteKit",
 			resources: [
 				.copy("PrivacyInfo.xcprivacy"),
 			]
 		),
 		.testTarget(
-			name: "SwiftImageReadWriteTests",
-			dependencies: ["SwiftImageReadWrite"],
+			name: "SwiftImageReadWriteKitTests",
+			dependencies: ["SwiftImageReadWriteKit"],
 			resources: [
 				.process("resources"),
 			]
